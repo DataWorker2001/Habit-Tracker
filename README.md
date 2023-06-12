@@ -25,29 +25,29 @@ Welcome to the Habit Tracking Web App created using React! This web application 
 
 The project's folder structure is organized as follows:
 
-habit-tracking-app/
-├──.firebase
-├── README.md
-├── node_modules/
-├── package.json
-├── package-lock.json
-├── public/
-│   ├── index.html
-│   └── favicon.ico
-│   ├── android-chrome-192x192
-│   ├── android-chrome-512X512
-│   ├── favicon-16X16
-│   ├── favicon-32X32
-│   ├── manifest
-│   ├── robots
-│   ├── site.webmanifest
-└── src/
-    ├── App.js
-    ├── index.js
-    ├── styles.css
-├── .firebasesrc
-├──.gitignore
-├──firebase
+habit-tracking-app/<br/>
+├──.firebase<br/>
+├── README.md<br/>
+├── node_modules/<br/>
+├── package.json<br/>
+├── package-lock.json<br/>
+├── public/<br/>
+│   ├── index.html<br/>
+│   └── favicon.ico<br/>
+│   ├── android-chrome-192x192<br/>
+│   ├── android-chrome-512X512<br/>
+│   ├── favicon-16X16<br/>
+│   ├── favicon-32X32<br/>
+│   ├── manifest<br/>
+│   ├── robots<br/>
+│   ├── site.webmanifest<br/>
+└── src/<br/>
+    ├── App.js<br/>
+    ├── index.js<br/>
+    ├── styles.css<br/>
+├── .firebasesrc<br/>
+├──.gitignore<br/>
+├──firebase<br/>
 
 ## Getting Started
 
