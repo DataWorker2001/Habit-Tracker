@@ -1,96 +1,22 @@
-// import './styles.css';
-// import React, { useState } from 'react';
-
-// function App() {
-//   const [habits, setHabits] = useState([]);
-
-//   const addHabit = (habit) => {
-//     setHabits([...habits, { text: habit, tracked: true }]);
-//   };
-
-//   const toggleHabit = (index) => {
-//     const updatedHabits = [...habits];
-//     updatedHabits[index].tracked = !updatedHabits[index].tracked;
-//     setHabits(updatedHabits);
-//   };
-
-//   const deleteHabit = (index) => {
-//     const updatedHabits = [...habits];
-//     updatedHabits.splice(index, 1);
-//     setHabits(updatedHabits);
-//   };
-
-//   return (
-//     <div className="app-container" style={{ display: 'block' }}>
-//       <h1>Habit Tracking App</h1>
-//       <AddHabitForm addHabit={addHabit} />
-//       <h2>List of Habits</h2>
-//       {habits.length > 0 ? (
-//         <div className="habit-list">
-//           {habits.map((habit, index) => (
-//             <div className="habit-item" key={index}>
-//               <input
-//                 type="checkbox"
-//                 checked={habit.tracked}
-//                 onChange={() => toggleHabit(index)}
-//               />
-//               <span className={habit.tracked ? 'habit-text' : 'habit-text untracked'}>
-//                 {index + 1}. {habit.text}
-//               </span>
-//               <button onClick={() => deleteHabit(index)}>Delete</button>
-//             </div>
-//           ))}
-//         </div>
-//       ) : (
-//         <p>No Habits Present for Tracking</p>
-//       )}
-//     </div>
-//   );
-// }
-
-// const AddHabitForm = ({ addHabit }) => {
-//   const [habit, setHabit] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (habit.trim() !== '') {
-//       addHabit(habit);
-//       setHabit('');
-//     }
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <input
-//         type="text"
-//         value={habit}
-//         onChange={(e) => setHabit(e.target.value)}
-//         placeholder="Enter a habit"
-//       />
-//       <button type="submit">Add Habit To Track</button>
-//     </form>
-//   );
-// };
-
-// export default App;
-
 import './styles.css';
 import React, { useState } from 'react';
 
 function App() {
   const [habits, setHabits] = useState([]);
 
+  // Function to add a new habit
   const addHabit = (habit) => {
     setHabits([...habits, { text: habit, tracked: true, activity: [] }]);
   };
 
-
+  // Function to delete a habit
   const deleteHabit = (index) => {
     const updatedHabits = [...habits];
     updatedHabits.splice(index, 1);
     setHabits(updatedHabits);
   };
 
+  // Function to handle activity status update
   const handleActivityUpdate = (habitIndex, day, status) => {
     const updatedHabits = [...habits];
     const habit = updatedHabits[habitIndex];
@@ -103,6 +29,7 @@ function App() {
     setHabits(updatedHabits);
   };
 
+  // Function to get the last seven days
   const getLastSevenDays = () => {
     const today = new Date();
     const lastSevenDays = [];
@@ -162,7 +89,9 @@ function App() {
                   </tbody>
                 </table>
               </div>
-              <button className = 'btn2' onClick={() => deleteHabit(habitIndex)}>Delete</button>
+              <button className="btn2" onClick={() => deleteHabit(habitIndex)}>
+                Delete
+              </button>
             </div>
           ))}
         </div>
@@ -173,9 +102,11 @@ function App() {
   );
 }
 
+// Component for adding a new habit
 const AddHabitForm = ({ addHabit }) => {
   const [habit, setHabit] = useState('');
 
+  // Function to handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (habit.trim() !== '') {
