@@ -59,10 +59,13 @@ To get a local copy of this project up and running, follow these steps:
    git clone https://github.com/DataWorker2001/Habit-Tracker
    
 2. Change to the project's directory:
+   ```shell
    cd habit-tracking-app
 3. Install the dependencies:
+   ```shell
    npm install
 4. Start the development server by typing the following command in the terminal:
+   ```shell
    npm start
 5. The default web browser will open and we can see the app running on http://localhost:3000.
 
